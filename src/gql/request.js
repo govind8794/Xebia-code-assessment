@@ -15,3 +15,7 @@ export const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+  //     <button className={'ui primary button'} onClick={ () => clickHandler(index)} key={index}>
+      //     {topicName.name}
+      // </button>

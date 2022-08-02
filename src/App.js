@@ -1,14 +1,17 @@
 import "./App.css";
 import { Topic } from "../src/Components/Topic";
+import { Loader } from "./Components/Loader";
 import { useTopic } from "../src/Hooks/useTopic";
+import { useState } from "react";
 
 function App() {
-  const { error, data, loading } = useTopic("react");
+  const [topic , setTopic] = useState('react')
+  const { error, data, loading } = useTopic(topic);
   return (
     <div className="App">
       {error && <h1> OOp's some thing went worng</h1>}
-      {loading && <h1> loading....</h1>}
-      {data && <Topic data={data} />}
+      {loading && <Loader />}
+      {data && <Topic data={data}  setTopic={setTopic} />}
     </div>
   );
 }
