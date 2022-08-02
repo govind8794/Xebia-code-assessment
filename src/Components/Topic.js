@@ -3,10 +3,10 @@ import { TopicsContent } from "./TopicsContent";
 import { Button } from "./Button";
 
 export const Topic = ({ data, setTopic }) => {
-  const [showContent, setShowContent] = useState(null);
+  const [topicsContent, setTopicsContent] = useState(null);
   const clickHandler = (value) => {
     //setTopic(data.topic.relatedTopics[value].name)
-    setShowContent(data.topic.relatedTopics[value]);
+    setTopicsContent(data.topic.relatedTopics[value]);
   };
 
   return (
@@ -18,7 +18,7 @@ export const Topic = ({ data, setTopic }) => {
         );
       })}
     </div>
-     {showContent && <TopicsContent content={showContent} />}
+     {topicsContent && <TopicsContent topicsContent={topicsContent} />}
     </>
   );
 };
